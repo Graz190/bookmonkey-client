@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { BookApiService } from './book-api.service';
 import { Book } from './models/book';
 
 @Component({
@@ -7,7 +8,12 @@ import { Book } from './models/book';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent {
+  constructor(private bookData: BookApiService){}
+
   title = 'bookmonkey';
+
+  books:Book[]=this.bookData.getAll();
+  
   bookSearchTerm='';
 
   updateBookSearchTerm(inputEvent: Event){
@@ -17,26 +23,6 @@ export class BookComponent {
     console.log('navigate to book details, soon...');
     console.log(book);
   }
-  books:Book[] =[{
-    title:"Herr der Ringe",
-    author:'J R R Tolkien',
-    abstract:'one Ring'
-  },
-  {title:"Harry Potter",
-  author:'J.K.Roling',
-  abstract:'Junge geht zur Schule'
-},
-{
-  title:"Moby Dick",
-  author:"Herman Melville",
-  abstract:"Angler sucht Wal"
-},
-{
-  title: 'How to win friends',
-  author: 'Dale Carnegie',
-  abstract: 'In this book ...'
-}
-]
 
 
 }
