@@ -19,10 +19,8 @@ export class BookComponent implements OnInit, OnDestroy{
 
   bookSearchTerm='';
 
-  ngOnInit() {
-    this.subscription= this.bookApiService.getAll().subscribe({
-      next: (books: Book[])=>this.books=books,
-    });
+  ngOnInit() :void{
+    this.subscription= this.bookApiService.getAll().subscribe((books: Book[])=>this.books=books);
   }
 
   ngOnDestroy(): void {
