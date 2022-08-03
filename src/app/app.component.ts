@@ -13,10 +13,15 @@ export class AppComponent {
     console.log('navigate to book details, soon...');
     console.log(book);
   }
-  book:Book ={
+  books:Book[] =[{
     title:"Herr der Ringe",
     author:'J R R Tolkien',
     abstract:'one Ring'
-  }
+  },
+  {title:"Harry Potter",
+  author:'J.K.Roling',
+  abstract:'Junge geht zur Schule'
+}
+]
 
 }
