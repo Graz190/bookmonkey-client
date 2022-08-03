@@ -21,6 +21,16 @@ export class AppComponent {
   {title:"Harry Potter",
   author:'J.K.Roling',
   abstract:'Junge geht zur Schule'
+},
+{
+  title:"Moby Dick",
+  author:"Herman Melville",
+  abstract:"Angler sucht Wal"
+},
+{
+  title: 'How to win friends',
+  author: 'Dale Carnegie',
+  abstract: 'In this book ...'
 }
 ]
 
