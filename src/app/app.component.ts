@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Book } from './models/book';
+import { Book } from './book/models/book';
 
 @Component({
   selector: 'app-root',
@@ -7,31 +7,5 @@ import { Book } from './models/book';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'bookmonkey';
-
-  goToBookDetails(book: Book){
-    console.log('navigate to book details, soon...');
-    console.log(book);
-  }
-  books:Book[] =[{
-    title:"Herr der Ringe",
-    author:'J R R Tolkien',
-    abstract:'one Ring'
-  },
-  {title:"Harry Potter",
-  author:'J.K.Roling',
-  abstract:'Junge geht zur Schule'
-},
-{
-  title:"Moby Dick",
-  author:"Herman Melville",
-  abstract:"Angler sucht Wal"
-},
-{
-  title: 'How to win friends',
-  author: 'Dale Carnegie',
-  abstract: 'In this book ...'
-}
-]
 
 }
