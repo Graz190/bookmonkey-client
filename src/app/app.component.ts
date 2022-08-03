@@ -8,6 +8,11 @@ import { Book } from './models/book';
 })
 export class AppComponent {
   title = 'bookmonkey';
+
+  goToBookDetails(book: Book){
+    console.log('navigate to book details, soon...');
+    console.log(book);
+  }
   book:Book ={
     title:"Herr der Ringe",
     author:'J R R Tolkien',

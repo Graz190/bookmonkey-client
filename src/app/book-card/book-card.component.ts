@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Book } from '../models/book';
 
 @Component({
@@ -8,10 +8,11 @@ import { Book } from '../models/book';
 })
 export class BookCardComponent implements OnInit {
   @Input() content!:Book;
+  @Output() detailsClick = new EventEmitter<Book>();
 
   handleDetailsClick(click: MouseEvent) {
     click.preventDefault();
-    console.log('Click Details-Link:', click);
+    this.detailsClick.emit(this.content);
     
   }
   customStyle = {
