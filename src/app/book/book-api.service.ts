@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Book } from './models/book';
 
 @Injectable({
@@ -28,7 +29,7 @@ export class BookApiService {
         "START WITH WHY shows that the leaders who've had the greatest influence in the world all think, act, and communicate the same way -- and it's the opposite of what everyone else does. Sinek calls this powerful idea The Golden Circle, and it provides a framework upon which organizations can be built, movements can be led, and people can be inspired. And it all starts with WHY."
     }
   ];
-  getAll(){
-    return this.books;
+  getAll():Observable<Book[]>{
+    return of(this.books);
   }
 }
