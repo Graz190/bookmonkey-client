@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable} from 'rxjs';
 import { Book } from './models/book';
 import { HttpClient } from '@angular/common/http';
 
@@ -9,8 +9,12 @@ import { HttpClient } from '@angular/common/http';
 
 export class BookApiService {
   constructor(private http: HttpClient){};
+  private readonly baseUrl= 'http://localhost:4730'
 
   getAll():Observable<Book[]>{
-    return this.http.get<Book[]>('http://localhost:4730/books')
+    return this.http.get<Book[]>(`${this.baseUrl}/books`)
+  }
+  getBookByIsbn(isbn: string){
+    return this.http.get<Book>(`${this.baseUrl}/books/${isbn}`)
   }
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { BookComponent } from './book/book.component';
+
 
 const routes:Routes=[
   {
@@ -15,8 +15,7 @@ const routes:Routes=[
   component:AboutComponent
 },
 {
-  path:'books',
-  component:BookComponent
+  path:'books', loadChildren: () => import('./book/book.module').then(m=> m.BookModule) 
 }
 ]
 
