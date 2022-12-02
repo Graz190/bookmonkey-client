@@ -1,0 +1,14 @@
+<form [formGroup]="newform" (ngSubmit)="submit()">
+    <div>
+    <span>Title</span>
+    <input type="text" formControlName="title" placeholder="title">
+ 
+    <span>Isbn</span>
+    <input type="text" formControlName="isbn" placeholder="isbn">
+    <span>Author</span>
+    <input type="text" formControlName="author" placeholder="author">
+    <span>Abstract</span>
+    <input type="text" formControlName="abstract" placeholder="abstract">
+</div>
+      <button type="submit" >Save</button>
+  </form>

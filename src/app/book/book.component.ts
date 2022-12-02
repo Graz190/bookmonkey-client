@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { ActivatedRoute, Route, Router, RouterLink } from '@angular/router';
+import { Router} from '@angular/router';
 import { Observable} from 'rxjs';
 import { BookApiService } from './book-api.service';
 import { Book } from './models/book';
@@ -19,7 +19,6 @@ export class BookComponent implements OnInit{
 
   }
   ngOnInit(): void {
-
     this.books$ = this.bookApiService.getAll().pipe(
       
     )
@@ -29,6 +28,7 @@ export class BookComponent implements OnInit{
   updateBookSearchTerm(inputEvent: Event){
     this.bookSearchTerm = (inputEvent.target as HTMLInputElement).value
   }
+
   goToBookDetails(book: Book){
     this.router.navigate(['/books',book.isbn])
   }

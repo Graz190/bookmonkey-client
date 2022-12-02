@@ -10,10 +10,12 @@ import { Book } from '../book/models/book';
   styleUrls: ['./book-detail.component.scss']
 })
 export class BookDetailComponent implements OnInit {
+  
   private readonly baseUrl= 'http://localhost:4730'
   public book!: Book;
   constructor(private route: ActivatedRoute, private bookService: BookApiService) { }
   book$!: Observable<Book>;
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {this.bookService.getBookByIsbn(params['isbn']).subscribe(book => this.book = book);
     });
